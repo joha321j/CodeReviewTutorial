@@ -17,30 +17,29 @@ namespace CleanCoding
             Console.WriteLine("Hello and welcome to the calculator!");
             Console.WriteLine("Calculate down payment: press 1");
             Console.WriteLine("Calculate approximate loan amount: press 2");
-            calculate(Console.ReadLine());
+            Calculate(Console.ReadLine());
         }
 
-        public static void calculate(string t)
+        public static void Calculate(string userInput)
         {
-            if(t == "1")
+            if(userInput == "1")
             {
-                double hp, pn;
                 Console.WriteLine("Price of house? " );
-                hp = Double.Parse(Console.ReadLine());
+                double priceOfHouse = Double.Parse(Console.ReadLine());
                 Console.WriteLine("How many % of the total house price do you need upfront?" );
-                pn = Double.Parse(Console.ReadLine());          
-                double a = (hp / 100) * pn;
+                double upFrontPayment = Double.Parse(Console.ReadLine());          
+                double a = (priceOfHouse / 100) * upFrontPayment;
                 Console.WriteLine(a + " amount you need");
             }
-            else if (t == "2")
+            else if (userInput == "2")
             {
-                double m, a;
+                double monthlyInterest;
                 Console.WriteLine("Monthly income? : " );
-                m = Double.Parse(Console.ReadLine());
+                double monthlyIncome = Double.Parse(Console.ReadLine());
                 Console.WriteLine("Approximate multiplier ? ");
-                a = Double.Parse(Console.ReadLine());      
-                double y = m * 12;
-                double hpa = y * a;
+                monthlyInterest = Double.Parse(Console.ReadLine());      
+                double y = monthlyIncome * 12;
+                double hpa = y * monthlyInterest;
                 Console.WriteLine(hpa + " approximate purchase");
             }
             Console.ReadLine();
